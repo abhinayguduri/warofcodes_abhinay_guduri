@@ -3,21 +3,29 @@
 Code Of Wars
 
 ## Getting Started
+ How to Install ?
 
-[Instructions for installing and running the project]
+ 1. Install XAMPP 
+ 2. Import the warofcodes.sql file to phpmyadmin
+ 3. navigate to core/init.php 
+ 4. edit your db details and base url
+ 5. start the xampp Apache and Mysql
+ 6. Go check on Browser
 
 ## Usage
 
-[Instructions for how to use the project]
+
 
 ## Contributing
 
-[Guidelines for contributing to the project]
+
 
 ## License
 
-[Information about the project license]
+
 
 ## Contact
 
-[Your name and contact information]
+Guduri Abhinay
+guduriabhinay@gmail.com
+
