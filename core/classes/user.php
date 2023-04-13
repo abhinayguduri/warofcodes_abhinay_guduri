@@ -70,6 +70,20 @@ class User
       }
    }
 
+   public function checkEmail($email){
+    $stmt = $this->pdo->prepare("SELECT * FROM `users` WHERE  email= :email");
+    $stmt->execute(array('email' =>$email));
+    $user=$stmt->fetch(PDO::FETCH_OBJ);
+    $count=$stmt->rowCount();
+    if ($count>0) {
+         return true;
+         
+    }else{
+      return false;
+    }
+
+}
+
   //user data 
 
          public function userData($user_id){
@@ -166,7 +180,7 @@ class User
          <td>'.$u->phone.'</td>
          <td>
            <button type="button" class="btn btn-primary">Edit</button>
-           <form method="POST" action="">
+      <form method="POST" action="">
       <input type="hidden" name="id" value="'.$u->id.'">
       <button type="button" onclick="this.form.submit()" name="delete" class="btn btn-danger">Delete</button>
       </form>
@@ -175,6 +189,12 @@ class User
 
       }
  }
+
+ public function deleteUser($id){
+  $stmt=$this->pdo->prepare("DELETE FROM `users` WHERE `id`=:id");
+  $stmt->bindParam(":id",$id,PDO::PARAM_INT);
+  $stmt->execute();
+    }  
 }
 ?>
 
